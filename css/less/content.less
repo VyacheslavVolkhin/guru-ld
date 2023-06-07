@@ -1,6 +1,67 @@
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+body.popup-open {
+    overflow: hidden;
+}
+.popup-outer-box {
+    display: none;
+    padding: 50px 20px;
+    animation: fadein ease 0.2s;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    background: fade(#000, 70);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &.active {
+        display: flex;
+    }
+}
+.popup-box {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #fff;
+    z-index: 20;
+    border-radius: 25px;
+    border: 1px solid var(--clr-att-active);
+    padding: 25px;
+    .popup-title-wrap, .popup-footer-wrap {
+        width: 100%;
+        flex-shrink: 0;
+    }
+    .popup-title-wrap {
+        font-size: 14px;
+        line-height: 1.18;
+        letter-spacing: 0.02em;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .popup-content-wrap {
+        width: 100%;
+    }
+    .btn-action-ico {
+        &.ico-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+        }
+    }
+    .h1-title {
+        font-size: 30px;
+        margin: 0 0 0.4em 0;
+    }
+}
 .total-tiles-box {
     margin-bottom: 35px;
     .title-box {

@@ -1237,6 +1237,73 @@ body {
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+body.popup-open {
+  overflow: hidden;
+}
+.popup-outer-box {
+  display: none;
+  padding: 50px 20px;
+  animation: fadein ease 0.2s;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  position: fixed;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.popup-outer-box.active {
+  display: -ms-flexbox;
+  display: flex;
+}
+.popup-box {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #fff;
+  z-index: 20;
+  border-radius: 25px;
+  border: 1px solid var(--clr-att-active);
+  padding: 25px;
+}
+.popup-box .popup-title-wrap,
+.popup-box .popup-footer-wrap {
+  width: 100%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.popup-box .popup-title-wrap {
+  font-size: 14px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.popup-box .popup-content-wrap {
+  width: 100%;
+}
+.popup-box .btn-action-ico.ico-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+.popup-box .h1-title {
+  font-size: 30px;
+  margin: 0 0 0.4em 0;
+}
 .total-tiles-box {
   margin-bottom: 35px;
 }
@@ -1644,6 +1711,16 @@ body {
 /* ----------------------------------- *\
 			inputs elements styles
 \* ----------------------------------- */
+.form-input {
+  height: 44px;
+  padding: 0 10px 0 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--clr-base);
+  background: #fff;
+  border: 1px solid var(--clr-base);
+  border-radius: 8px;
+}
 .form-input[placeholder] {
   text-overflow: ellipsis;
 }
@@ -1919,6 +1996,36 @@ select.form-input:required:invalid {
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
+.frm-popup {
+  display: block;
+  position: relative;
+}
+.frm-popup .frm-row {
+  display: block;
+  margin: 0 0 10px 0;
+}
+.frm-popup .frm-row-submit {
+  display: block;
+  margin: 0;
+  padding-top: 20px;
+  text-align: center;
+}
+.frm-popup .frm-row-submit .btn {
+  width: 100%;
+}
+.frm-popup .field-info {
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.frm-popup .field-info a:not(:hover) {
+  color: inherit;
+}
+.frm-popup .btn {
+  height: 44px;
+  border-radius: 22px;
+}
 .frm-main {
   display: -ms-flexbox;
   display: flex;

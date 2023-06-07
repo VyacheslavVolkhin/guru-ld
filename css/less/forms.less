@@ -1,6 +1,38 @@
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
+.frm-popup {
+    display: block;
+    position: relative;
+    .frm-row {
+        display: block;
+        margin: 0 0 10px 0;
+    }
+    .frm-row-submit {
+        display: block;
+        margin: 0;
+        padding-top: 20px;
+        text-align: center;
+        .btn {
+            width: 100%;
+        }
+    }
+    .field-info {
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        font-weight: 500;
+        margin-bottom: 10px;
+        a {
+            &:not(:hover) {
+                color: inherit;
+            }
+        }
+    }
+    .btn {
+        height: 44px;
+        border-radius: 22px;
+    }
+}
 .frm-main {
     display: flex;
     .field-input {

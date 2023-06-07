@@ -44,14 +44,14 @@
 			</div>
 			<div class="form-inner-wrap">
 				<div class="footer-title">Код сертификата</div>
-				<form action="/" class="frm-main">
+				<div class="frm-main">
 					<div class="field-input">
 						<input type="text" class="form-input" placeholder="Введите код сертификата" required>
 					</div>
 					<div class="field-button">
-						<button type="submit" class="btn">Проверить</button>
+						<a href="" class="btn js-popup-open" data-popup="popup-order">Проверить</a>
 					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 		<div class="footer-bottom-panel">
@@ -66,3 +66,33 @@
 	</div>
 </footer>
 <!-- /footer -->
+
+
+<!--popup-outer-box-->
+<div class="popup-outer-box" id="popup-order">
+	<div class="popup-box">
+		<div class="popup-title-wrap">
+			<a href="" class="btn-action-ico ico-close js-popup-close"></a>
+			<div class="popup-title h1-title">Заголовок</div>
+			<p>Оставьте номер телефона и наш менеджер свяжется с вами в ближайшее время</p>
+		</div>
+		<div class="popup-content-wrap">
+			<form action="/" class="frm-popup">
+				<div class="frm-row">
+					<input type="text" class="form-input" placeholder="Ваше имя" required>
+				</div>
+				<div class="frm-row">
+					<input type="tel" class="form-input" placeholder="Ваш номер телефона" required>
+				</div>
+				<div class="frm-row-submit">
+					<div class="field-info">
+						Нажимая "Отправить" вы принимаете условия <a href="">пользовательского соглашения</a>
+					</div>
+					<div class="field-button">
+						<button type="submit" class="btn">Отправить</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div><!--/popup-outer-box-->

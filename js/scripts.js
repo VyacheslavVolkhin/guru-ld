@@ -26,6 +26,22 @@ $(document).ready(function(){
     }
 
 
+    //popups
+    let popupCurrent;
+    $('.js-popup-open').on('click', function () {
+        $('.popup-outer-box').removeClass('active');
+        $('body').addClass('popup-open');
+        popupCurrent = $(this).attr('data-popup');
+        $('.popup-outer-box[id="' + popupCurrent + '"]').addClass('active');
+        return false;
+    })
+    $('.js-popup-close').on('click', function () {
+        $('body').removeClass('popup-open');
+        $('.popup-outer-box').removeClass('active');
+        return false;
+    })
+
+
     //popup block
     $('.js-popup-wrap .js-btn-toggle').on('click', function() {
         if ($(this).hasClass('active')) {
