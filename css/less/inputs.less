@@ -1,0 +1,282 @@
+/* ----------------------------------- *\
+			inputs elements styles
+\* ----------------------------------- */
+.form-input[placeholder] {
+    text-overflow: ellipsis;
+}
+.form-input {
+
+}
+textarea.form-input {
+
+}
+select.form-input {
+    display: block;
+    width: 100%;
+    padding-right: 30px;
+    background-image: url(../img/icons/arrow-select.svg);
+    background-position: right 20px center;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    appearance: none!important;
+    line-height: 1em;
+    text-indent: 0.01px;
+    text-overflow: '';
+    outline: none;
+    &.form-input-clear {
+        height: auto;
+        border: none;
+        min-height: 0;
+        border-radius: 0;
+        box-shadow: none;
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1em;
+        line-height: inherit;
+        padding: 0 16px 0 0;
+        color: inherit;
+        font-weight: bold;
+        background-image: url(../img/icons/arrow-select.png);
+        background-size: 8px auto;
+        background-repeat: no-repeat;
+        background-position: right center;
+    }
+}
+select::-ms-expand {
+    display: none;
+}
+//   <select class="form-input form-input-line" required>
+//       <option value="" disabled selected hidden>Выбрать</option>
+//       <option>Пункт списка</option>
+//   </select>
+select.form-input:required:invalid {
+    color: #ADADAD;
+}
+.btn {
+    height: 43px;
+    padding: 0 40px;
+    border: 2px solid var(--clr-att-active);
+    background: var(--clr-att-active);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 0.125em;
+    box-shadow: 0px 6px 21px rgba(104, 130, 245, 0.67);
+    &:hover {
+        background-color: var(--clr-att);
+        border-color: var(--clr-att);
+        color: #fff;
+    }
+    &.button-menu {
+        height: 44px;
+        border: none;
+        border-radius: 22px;
+        padding: 0 15px;
+        background: var(--clr-bg);
+        font-size: 1em;
+        color: var(--clr-base);
+        box-shadow: none;
+        text-transform: none;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        white-space: normal;
+        text-align: left;
+        line-height: 115.2%;
+        &:hover {
+            background: #F2F6FF - #111;
+            color: var(--clr-base);
+        }
+        .button-ico {
+            margin: 0 10px 0 0;
+            width: auto;
+            height: 24px;
+            img, svg {
+                position: static;
+                width: auto;
+                height: 24px;
+                max-width: inherit;
+            }
+        }
+    }
+    &.button-border {
+        &:not(:hover) {
+            background-color: transparent;
+            color: #231f20;
+        }
+        &:hover, &.active {
+            background-color: var(--clr-att-active);
+            border-color: var(--clr-att-active);
+            .button-ico {
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
+    .button-ico {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+        transition: all ease 0.2s;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+}
+.btn-action-ico {
+    min-width: 0;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 40px;height: 40px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+    transition: all ease 0.2s;
+    flex-shrink: 0;
+    &:not(.btn) {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    &.btn {
+        min-width: 0;
+        min-height: 0;
+        padding: 0;
+        display: block;
+    }
+    &:before, &:after, [class*="icon-"], img, svg {
+        display: block;
+        position: absolute;
+        top: 0;bottom: 0;left: 0;right: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        transition: all ease 0.2s;
+    }
+    img, svg {
+        max-width: 24px;
+        max-height: 24px;
+    }
+    &:before, &:after {
+        content: "";
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    &:hover {
+        text-decoration: none;
+        &:not(.btn) {
+            background: none;
+            box-shadow: none;
+        }
+    }
+    &.ico-arrow {
+        z-index: 20;
+        cursor: pointer;
+        &:before {
+            background-image: url(../img/icons/arrow-slider.png);
+        }
+        &:hover {
+        }
+    }
+    &.ico-arrow-prev {
+        &:before {
+            .t-rotate(180deg);
+        }
+    }
+    &.ico-menu {
+        &:before {
+            background-image: url(../img/icons/menu.svg);
+        }
+    }
+    &.ico-close {
+        &:before {
+            background-image: url(../img/icons/close.svg);
+        }
+    }
+    &.button-soc {
+        img, svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &.ico-play01 {
+        width: 25px;
+        height: 30px;
+        &:before {
+            background-image: url(../img/icons/play01.svg);
+            background-size: 100% auto;
+        }
+    }
+    &.ico-play02 {
+        width: 29px;
+        height: 34px;
+        &:before {
+            background-image: url(../img/icons/play02.svg);
+            background-size: 100% auto;
+        }
+    }
+    &.ico-play03 {
+        width: 18px;
+        height: 22px;
+        &:before {
+            background-image: url(../img/icons/play03.svg);
+            background-size: 100% auto;
+        }
+    }
+}
+.btn-action-more {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 34px 0 0;
+    position: relative;
+    font-weight: 500;
+    color: #B4D2E4;
+    &:hover {
+        color: #B4D2E4;
+        opacity: 0.8;
+    }
+    &:before {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        background: url(../img/icons/arrow-more.svg) center no-repeat;
+        background-size: 100% auto;
+        top: 50%;
+        right: 0;
+        margin-top: -12px;
+    }
+}
+@media (min-width: 1024px) {
+    .btn {
+        height: 6.7rem;
+        border-radius: 3.4rem;
+        &.button-menu {
+            height: 6rem;
+            border-radius: 3rem;
+            padding: 0 10px;
+            .button-ico {
+                height: 35px;
+                img {
+                    height: 35px;
+                }
+            }
+        }
+    }
+}

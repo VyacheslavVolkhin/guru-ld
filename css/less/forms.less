@@ -1,27 +1,41 @@
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
-textarea,
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="range"],
-input[type="search"],
-input[type="tel"],
-input[type="url"] {
-	
-}
-textarea {
-	height: 100px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	resize: none;
-}
-.btn,
-button,
-input[type="submit"] {
-	
+.frm-main {
+    display: flex;
+    .field-input {
+        flex: 1;
+        padding: 0 10px 0 0;
+    }
+    .field-button {
+        flex-shrink: 0;
+    }
+    .btn {
+        height: 38px;
+        border-radius: 19px;
+        padding: 0 13px;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        box-shadow: none;
+        text-transform: none;
+    }
+    .form-input {
+        height: 38px;
+        border-radius: 19px;
+        box-shadow: none;
+        background: transparent;
+        border: 1px solid #fff;
+        padding: 0 10px;
+        text-align: center;
+        font-size: 11px;
+        font-weight: 400;
+        color: #fff;
+    }
+    [placeholder]::-webkit-input-placeholder {color: #fff;}
+    [placeholder]:-moz-placeholder {color: #fff;}
+    [placeholder]::-moz-placeholder {color: #fff;}
+    [placeholder]:-ms-input-placeholder {color: #fff;}
 }
 .frm-row,
 .frm-field,
@@ -30,6 +44,10 @@ input[type="submit"] {
     flex-wrap: wrap;
 	position: relative;
 	line-height: 1;
+}
+.frm-field {
+    display: block;
+    width: 100%;
 }
 .frm-select {
 	position: relative;
@@ -55,4 +73,22 @@ input[type="submit"] {
             position: absolute;
         }
 	}
+}
+
+@media (min-width: 1024px) {
+    .frm-main {
+        .btn {
+            height: 47px;
+            border-radius: 24px;
+            padding: 0 3rem;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+        }
+        .form-input {
+            height: 47px;
+            border-radius: 24px;
+            font-size: 14px;
+            letter-spacing: 0.02em;
+        }
+    }
 }

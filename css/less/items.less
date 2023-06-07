@@ -1,44 +1,192 @@
 /* ----------------------------------- *\
 			items styles
 \* ----------------------------------- */
-.item-photo {
+.item-tile-total {
+    display: block;
+    position: relative;
+    .tile-ico {
+        width: 110px;
+        height: 110px;
+        margin: 0 auto;
+    }
+    .tile-title-wrap {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 300px;
+        margin-left: -150px;
+        text-align: center;
+    }
+    .tile-title-inner {
+        display: block;
+        width: 100%;
+        flex-shrink: 0;
+    }
+    .tile-title {
+        display: block;
+        color: #000;
+    }
+    .tile-total {
+        display: block;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 103.2%;
+        color: var(--clr-att-active);
+        .fb;
+    }
+}
+.item-tile-course {
+    display: block;
+    position: relative;
+    color: var(--clr-base);
+    font-size: 14px;
+    line-height: 118.2%;
+    &:hover {
+        color: var(--clr-att);
+    }
+    .tile-photo-wrap {
+        display: block;
+    }
+    .tile-info-wrap {
+        display: block;
+        padding: 15px 15px 0 15px;
+    }
+    .tile-action-wrap {
+        display: block;
+        padding: 0 15px;
+    }
+    .tile-title {
+        display: block;
+        font-size: 1em;
+        line-height: inherit;
+        margin: 0 0 10px 0;
+    }
+    .tile-price {
+        display: block;
+        font-size: 24px;
+        line-height: 103%;
+        font-weight: 500;
+        color: var(--clr-att-active);
+        margin-bottom: 10px;
+    }
+    .tile-rate {
+        margin-bottom: 10px;
+    }
+    .tile-photo {
+        display: block;
+        border-radius: 15px;
+        &:before {
+            padding-top: 55.55%;
+        }
+    }
+}
+.item-tile-main {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 50px;
+    align-items: center;
+    background: var(--clr-bg);
+    letter-spacing: 0.02em;
+    padding: 12px;
+    justify-content: center;
+    .tile-title {
+        display: block;
+        margin: 0 10px 0 0;
+    }
+    .btn-action-ico {
+        flex-shrink: 0;
+        margin: 0 6px 0 0;
+    }
+}
+.elm-rate, .tile-rate {
+    display: block;
+    position: relative;
+    font-size: 11px;
+    line-height: 14px;
+    padding: 0 0 0 19px;
+    &:before {
+        content: "";
+        display: block;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        background: url(../img/icons/rate.svg) center no-repeat;
+        background-size: 100% auto;
+        top: 50%;
+        left: 0;
+        margin-top: -7px;
+    }
+}
+.elm-photo, .tile-photo {
     display: block;
     position: relative;
     overflow: hidden;
     text-decoration: none;
     line-height: 1;
+    transform: translateZ(0);
+    &.photo-main {
+        border: 1px solid #f00;
+        width: 300px;
+        height: 300px;
+    }
     &:before {
         content: "";
-        display: block;
+        display: none;
         padding-top: 100%;
     }
     img {
         display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: relative;
         width: 100%;
     }
-    &.photo-full {
+    &.photo-cover {
         &:before {
-            display: none;
+            display: block;
         }
         img {
-            position: relative;
-            top: auto;
-            bottom: auto;
-            left: auto;
-            right: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &.photo-contain {
+        &:before {
+            display: block;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
         }
     }
 }
-.elm-ico, .button-ico, .menu-ico, .frm-ico {
+.elm-price, .tile-price {
+    white-space: nowrap;
+    .fb;
+    &.price-old {
+        text-decoration: line-through;
+    }
+}
+.elm-ico, .button-ico, .menu-ico, .frm-ico, .tab-ico, .tile-ico {
     display: block;
     position: relative;
     overflow: hidden;
     width: 40px;
     height: 40px;
-    img, .i, svg {
+    img, [class*="icon-"], .i, svg {
         display: block;
         position: absolute;
         top: 0;
@@ -48,5 +196,46 @@
         margin: auto;
         max-width: 100%;
         max-height: 100%;
+    }
+}
+.elm-overlay {
+    display: none;
+    animation: fadein ease 0.2s;
+    background: fade(#000, 80);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 120;
+    &.active {
+        display: block;
+    }
+}
+@media (min-width: 1024px) {
+    .item-tile-total {
+        .tile-ico {
+            width: 220px;
+            height: 220px;
+        }
+        .tile-total {
+            font-size: 7.2rem;
+            font-weight: bold;
+            .fg;
+        }
+    }
+    .item-tile-course {
+        .tile-photo {
+            border-radius: 25px;
+        }
+        .tile-title {
+            margin-bottom: 15px;
+        }
+        .tile-rate {
+            margin-bottom: 15px;
+        }
+        .tile-price {
+            margin-bottom: 15px;
+        }
     }
 }
