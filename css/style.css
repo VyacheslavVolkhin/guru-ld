@@ -1028,6 +1028,12 @@ body {
 .item-tile-course .tile-photo:before {
   padding-top: 55.55%;
 }
+.item-tile-course a {
+  color: inherit;
+}
+.item-tile-course a:hover {
+  color: var(--clr-att-active);
+}
 .item-tile-main {
   display: -ms-flexbox;
   display: flex;
